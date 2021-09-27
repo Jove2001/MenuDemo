@@ -1,11 +1,12 @@
 // Menu demo for terminal-based programs
-// Ian McElwaine, s3863018, RMIT University
+// Ian McElwaine, s3863018, RMIT University, Australia
+// s3863018@student.rmit.edu.au
 
 // Dependencies: 
 // menutext.csv
 
 // memtext.csv data structure: 
-// Menu number, Menu name, Number of valid menu options, Menu text to print to console
+// Menu number, Menu name, Number of valid menu options, Menu text to print to console -->
 
 import java.io.*;
 import java.util.*;
@@ -85,6 +86,7 @@ public class MenuDemo
                int validInput = getValidUserInput(currentMenuNumber);
 
                // Display new menu
+			   // Press Ctl+c to break
                viewMenu(validInput, currentMenuNumber);
             }
          }
