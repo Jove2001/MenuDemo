@@ -4,7 +4,7 @@
 
 // Depends on: menutext.csv
 
-// memtext.csv data structure: 
+// menutext.csv data structure: 
 // Menu number, Menu name, Number of valid menu options, Menu text to print to console -->
 
 import java.io.*;
@@ -61,15 +61,16 @@ public class MenuDemo
             // Split input text into a string array
             String[] menuTextArray = menuText.split(",");
 
+            // -- Avoid NumberFormatException - Technique 1 --
+            // Only parse a string value that we know can ALWAYS
+            // be represented as a integer.
+            // In these next examples .parseInt() will never throw a
+            // NumberFormatException because menuTextArray[0] & menuTextArray[2]
+            // contains an int value.
+
             // Find the menu number (0-4) that we want to display
             if (Integer.parseInt(menuTextArray[0]) == menuNumber)
             {
-               // -- Avoid NumberFormatException - Technique 1 --
-               // Only parse a string value that we know can ALWAYS
-               // be represented as a integer.
-               // In this example .parseInt() will never throw a
-               // NumberFormatException because menuTextArray[2] contains an int
-               // value.
                currentMenuNumber = Integer.parseInt(menuTextArray[2]);
 
                // Start counter at 3 to skip index + menu name + number of menu
