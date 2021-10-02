@@ -2,8 +2,7 @@
 // Ian McElwaine, s3863018, RMIT University, Australia
 // s3863018@student.rmit.edu.au
 
-// Dependencies: 
-// menutext.csv
+// Depends on: menutext.csv
 
 // memtext.csv data structure: 
 // Menu number, Menu name, Number of valid menu options, Menu text to print to console -->
@@ -11,7 +10,8 @@
 import java.io.*;
 import java.util.*;
 
-// TO DO: Load menu text to memory as String[][] menuText instead of on-the-fly file access
+// TO DO: Load menu text to memory as String[][] menuText to avoid 
+// thrashing IO
 public class MenuDemo
 {
    // Create scanner for user input
@@ -86,7 +86,7 @@ public class MenuDemo
                int validInput = getValidUserInput(currentMenuNumber);
 
                // Display new menu
-			   // Press Ctl+c to break
+               // Press Ctl+c to break
                viewMenu(validInput, currentMenuNumber);
             }
          }
